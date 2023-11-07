@@ -2,7 +2,9 @@
 import './index.css'
 
 const Body = props => {
-  const {showLeftNavbar, showContent, showRightNavbar} = props
+  const {showContent, showLeftNavbar, showRightNavbar} = props
+  console.log(showLeftNavbar)
+  console.log(props)
   return (
     <div className="body-container">
       {showLeftNavbar ? (

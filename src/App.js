@@ -8,34 +8,35 @@ import './App.css'
 
 class App extends Component {
   state = {
-    showContent: true,
+    showContent: false,
     showLeftNavbar: true,
     showRightNavbar: true,
-  }
-
-  onToggleShowContent = () => {
-    this.setState(prevState => ({showContent: !prevState.showContent}))
-  }
-
-  onToggleShowLeftNavbar = () => {
-    this.setState(prevState => ({showLeftNavbar: !prevState.showLeftNavbar}))
   }
 
   onToggleShowRightNavbar = () => {
     this.setState(prevState => ({showRightNavbar: !prevState.showRightNavbar}))
   }
 
+  onToggleShowLeftNavbar = () => {
+    this.setState(prevState => ({showLeftNavbar: !prevState.showLeftNavbar}))
+  }
+
+  onToggleShowContent = () => {
+    this.setState(prevState => ({showContent: !prevState.showContent}))
+  }
+
   render() {
     const {showContent, showLeftNavbar, showRightNavbar} = this.state
+
     return (
       <div className="app-container">
         <ConfigurationController
-          showContent={showContent}
-          showLeftNavbar={showLeftNavbar}
-          showRightNavbar={showRightNavbar}
           onToggleShowContent={this.onToggleShowContent}
           onToggleShowLeftNavbar={this.onToggleShowLeftNavbar}
           onToggleShowRightNavbar={this.onToggleShowRightNavbar}
+          showContent={showContent}
+          showLeftNavbar={showRightNavbar}
+          showRightNavbar={showRightNavbar}
         />
         <Layout
           showContent={showContent}

@@ -3,24 +3,24 @@ import './index.css'
 
 const ConfigurationController = props => {
   const {
-    onToggleShowContent,
-    onToggleShowLeftNavBar,
-    onToggleShowRightNavBar,
     showContent,
     showLeftNavbar,
+    onToggleShowContent,
     showRightNavbar,
+    onToggleShowLeftNavbar,
+    onToggleShowRightNavbar,
   } = props
 
-  const onChangeShowContent = () => {
+  const onChangeContent = () => {
     onToggleShowContent()
   }
 
-  const onChangeShowLeftNavBar = () => {
-    onToggleShowLeftNavBar()
+  const onChangeLeftNavbar = () => {
+    onToggleShowLeftNavbar()
   }
 
-  const onChangeShowRightNavBar = () => {
-    onToggleShowRightNavBar()
+  const onChangeRightNavbar = () => {
+    onToggleShowRightNavbar()
   }
 
   return (
@@ -30,28 +30,37 @@ const ConfigurationController = props => {
         <input
           type="checkbox"
           className="checkbox"
-          onChange={onChangeShowContent}
+          id="content"
           checked={showContent}
+          onChange={onChangeContent}
         />
-        <p className="label">Content</p>
+        <label className="label-text" htmlFor="content">
+          Content
+        </label>
       </div>
       <div className="checkBox-container">
         <input
           type="checkbox"
+          id="left"
           className="checkbox"
-          onChange={onChangeShowLeftNavBar}
           checked={showLeftNavbar}
+          onChange={onChangeLeftNavbar}
         />
-        <p className="label">Left Navbar</p>
+        <label className="label-text" htmlFor="left">
+          Left Navbar
+        </label>
       </div>
       <div className="checkBox-container">
         <input
           type="checkbox"
+          id="right"
           className="checkbox"
-          onChange={onChangeShowRightNavBar}
           checked={showRightNavbar}
+          onChange={onChangeRightNavbar}
         />
-        <p className="label">Right Navbar</p>
+        <label className="label-text" htmlFor="right">
+          Right Navbar
+        </label>
       </div>
     </div>
   )
